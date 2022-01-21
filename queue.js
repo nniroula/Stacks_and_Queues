@@ -1,7 +1,3 @@
-// Queues
-
-// Queues
-
 class Queue{
     constructor(){
         // create an array/list to hold data
@@ -12,7 +8,12 @@ class Queue{
         this.data.push(val);
     }
     dequeue(val){
-        return this.data.shift(); // from the beginning bcoz queue is firt in first out
+        if(this.data.length === 0){
+            throw new Error("Can not dequeue from an empty queue"); 
+        }
+        else{
+            return this.data.shift(); // from the beginning bcoz queue is firt in first out
+        }
     }
     peek(){
         return this.data[0];
@@ -26,4 +27,5 @@ class Queue{
             return "Empty";
         }
     }
+
 }
